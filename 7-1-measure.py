@@ -74,3 +74,11 @@ try:
     y=[i/256*3.3 for i in result_ismer]
     x=[i*time_experiment/count for i in range(len(result_ismer))]
     pyplot.plot(x, y)
+    pyplot.xlabel('время')
+    pyplot.ylabel('вольтаж')
+    pyplot.show()
+
+finally:
+    gpio.output(leds, 0)
+    gpio.output(dac, 0)
+    gpio.cleanup()
